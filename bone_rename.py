@@ -119,7 +119,7 @@ addon_keymaps = []
 
 
 def register():
-    bpy.context.scene["my_bones"] = []
+    # bpy.context.scene["my_bones"] = []
     bpy.utils.register_class(BoneRenameOperator)
     bpy.utils.register_class(BoneLogger)
     # handle the keymap
@@ -132,7 +132,7 @@ def register():
 
 
 def unregister():
-    bpy.context.scene["my_bones"] = []
+    # bpy.context.scene["my_bones"] = []
     for km, kmi in addon_keymaps:
         km.keymap_items.remove(kmi)
     addon_keymaps.clear()
@@ -142,7 +142,7 @@ def unregister():
 
 
 # Debug ---------------------------------------------------------------------
-debug = 1
+debug = 0
 if debug == 1:
     try:
         unregister()
